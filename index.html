@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Tree Friends 🌳💚</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #0c3a0c, #2c7a2c);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+header {
+    padding: 30px;
+    background-color: #145214;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    z-index: 10;
+    position: relative;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.video-card {
+    background: #1f5c1f;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,255,0,0.3);
+}
+
+iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+
+footer {
+    padding: 10px;
+    background-color: #0f3d0f;
+    position: relative;
+    z-index: 10;
+}
+
+button#playMusicBtn {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #fff;
+    color: #145214;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Yaprak animasyonu */
+.leaf {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: url('https://i.ibb.co/0FJWpSx/leaf.png') no-repeat center center;
+    background-size: contain;
+    top: -50px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(120vh) rotate(360deg); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+🌲 My Flippy 💚
+</header>
+
+<button id="playMusicBtn">
+ “Seni rastgele sevmedim”
+</button>
+
+<div class="container">
+
+<div class="video-card">
+    <iframe src="https://www.youtube.com/embed/CBCzXYqMtzE" allowfullscreen></iframe>
+</div>
+
+<div class="video-card">
+    <iframe src="https://www.youtube.com/embed/q2WkUG-0_u4" allowfullscreen></iframe>
+</div>
+
+<div class="video-card">
+    <iframe src="https://www.youtube.com/embed/F5v5abQF-ds" allowfullscreen></iframe>
+</div>
+
+<div class="video-card">
+    <iframe src="https://www.youtube.com/embed/HO9S17Kz5Ds" allowfullscreen></iframe>
+</div>
+
+<div class="video-card">
+    <iframe src="https://www.youtube.com/embed/8L2gW_1HxRQ" allowfullscreen></iframe>
+</div>
+
+<div class="video-card">
+    <iframe src="https://www.youtube.com/embed/Nh70EZzT7N0" allowfullscreen></iframe>
+</div>
+
+<div class="video-card">
+    <iframe src="https://www.youtube.com/embed/FBxK4Jj4R4Y" allowfullscreen></iframe>
+</div>
+
+<div class="video-card">
+    <iframe src="https://www.youtube.com/embed/9PmT0zRVfPk" allowfullscreen></iframe>
+</div>
+
+</div>
+
+<footer>
+💚 sizi seviyorum umarım beyenirsiniz 💚
+</footer>
+
+<!-- YouTube Müzik Embed (Seni rastgele sevmedim) -->
+<iframe id="ytMusic" width="1" height="1" src="" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+
+<script>
+// Yaprakları oluştur
+for(let i=0;i<15;i++){
+    let leaf = document.createElement('div');
+    leaf.className = 'leaf';
+    leaf.style.left = Math.random()*100 + 'vw';
+    leaf.style.animationDuration = (5 + Math.random()*5) + 's';
+    leaf.style.animationDelay = (Math.random()*5) + 's';
+    document.body.appendChild(leaf);
+}
+
+// Müzik butonu
+document.getElementById("playMusicBtn").addEventListener("click", function() {
+    document.getElementById("ytMusic").src = "https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&loop=1&playlist=YOUR_VIDEO_ID";
+    this.style.display = "none";
+});
+</script>
+
+</body>
+</html>
